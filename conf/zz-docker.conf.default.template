@@ -1,0 +1,6 @@
+[global]
+daemonize = no
+
+[www]
+listen = /var/run/php/php$__PHP_VERSION-fpm.sock
+listen.mode = 0660

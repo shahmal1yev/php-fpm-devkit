@@ -1,0 +1,5 @@
+*
+!php.default.ini
+!zz-docker.conf.default.template
+!www.conf.default.template
+!.gitignore
