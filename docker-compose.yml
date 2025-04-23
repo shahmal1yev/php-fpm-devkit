@@ -1,0 +1,19 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        __PHP_VERSION: ${__PHP_VERSION}
+    image: ${IMAGE_NAME}
+    volumes:
+      - /var/www:/var/www
+      - fpms:/var/php/run
+      - /tmp:/tmp
+    working_dir: /var/www
+    network_mode: host
+    restart: unless-stopped
+
+volumes:
+  fpms:
+    external: true
