@@ -6,8 +6,8 @@ ARG __PHP_VERSION
 ENV __PHP_VERSION=${__PHP_VERSION}
 
 RUN apt-get update && apt-get install -y \
-    gettext-base git unzip curl nano libzip-dev libpng-dev libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip gd \
+    gettext-base git unzip curl nano libzip-dev libpng-dev libonig-dev libxml2-dev libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip gd \
     && pecl install xdebug && docker-php-ext-enable xdebug \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
